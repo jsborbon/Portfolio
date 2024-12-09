@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@localhost:3306/portfolio"
+}
+
+model CompanyInfo {
+  id        Int    @id @default(autoincrement())
+  name      String
+  label     String?
+  email     String?
+  phone     String?
+  url       String?
+  summary   String?
+  image     String?
+}
+
+model Location {
+  id          Int    @id @default(autoincrement())
+  address     String?
+  postal_code String?
+  city        String?
+  region      String?
+  country_code String?
+}
+
+model Profile {
+  id       Int    @id @default(autoincrement())
+  network  String?
+  username String?
+  url      String?
+}
+
+model Service {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String?
+}
+
+model Project {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String?
+  url         String?
+}
+
+model Client {
+  id       Int    @id @default(autoincrement())
+  name     String
+  sector   String?
+  summary  String?
+}
+
+model TeamMember {
+  id       Int    @id @default(autoincrement())
+  name     String
+  position String?
+  summary  String?
+}
+
+model Award {
+  id       Int    @id @default(autoincrement())
+  title    String
+  awarder  String?
+  date     String?
+  summary String?
+}
+
+model OrganizationalValue {
+  id    Int    @id @default(autoincrement())
+  value String
+}
+
+model ContactInfo {
+  id      Int    @id @default(autoincrement())
+  email   String?
+  phone   String?
+  address String?
+}
