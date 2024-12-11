@@ -1,0 +1,85 @@
+<!-- Hero Section -->
+<header class="hero-section">
+    <div>
+        <h1 class="hero-title">{{hero.title}}</h1>
+        <p class="hero-description">{{hero.description}}</p>
+        <a href="{{hero.buttonLink}}" target="_blank" class="btn btn-primary">{{hero.buttonText}}</a>
+    </div>
+</header>
+
+<!-- Información Principal -->
+<section class="container py-5 section-content">
+    <div class="text-center mb-4">
+        <img src="{{logo.src}}" alt="{{logo.alt}}" class="img-fluid">
+        <h2 class="mt-3 font-weight-bold">{{mainSection.heading}}</h2>
+    </div>
+    <div class="text-center mb-5">
+        <h4 class="font-weight-bold">{{mainSection.subheading}}</h4>
+        <p class="mt-2">{{mainSection.description}}</p>
+    </div>
+</section>
+
+<!-- Servicios -->
+<section class="container py-5 section-content">
+    <h2 class="text-center mb-4">{{services.title}}</h2>
+    <div class="row g-4">
+        {{#each services.list}}
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="icon-container mb-3">
+                        <i class="bi {{iconClass}}"></i>
+                    </div>
+                    <h5 class="mb-2">{{name}}</h5>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<!-- Testimonios -->
+<section class="container py-5 section-content">
+    <h2 class="text-center mb-4">{{testimonials.title}}</h2>
+    <div class="testimonial-container">
+        {{#each testimonials.list}}
+            <div class="testimonial">
+                <p>"{{quote}}"</p>
+                <p class="client-name"><strong>- {{client}}</strong></p>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<!-- Equipo -->
+<section class="container py-5 section-content">
+    <div class="text-center mb-4">
+        <h2 class="font-weight-bold">{{team.title}}</h2>
+        <p>{{team.subtitle}}</p>
+    </div>
+    <div class="row justify-content-center g-4">
+        {{#each team.members}}
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <img src="{{this.image.src}}" alt="{{this.image.alt}}" class="img-fluid mb-3 rounded-circle">
+                    <h5 class="font-weight-bold mb-2">{{this.name}}</h5>
+                    <p class="mb-2">{{this.role}}</p>
+                    <p class="mb-2">Tecnologías: {{this.technologies}}</p>
+                    <p class="mb-2">Idiomas: {{this.languages}}</p>
+                    <p class="mb-2">Proyectos personales: {{this.personalProjects}}</p>
+                    <p class="mb-2">Linkedin: {{this.linkedin}}</p>
+                    <a href={{this.url}}" class="btn btn-secondary">Ver CV</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="container py-5 section-content">
+    <h2 class="text-center mb-4">{{contactSection.title}}</h2>
+    <div class="text-center">
+        <p>{{contactSection.email}}</p>
+        <p>{{contactSection.phone}}</p>
+    </div>
+</section>
