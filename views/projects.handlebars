@@ -1,0 +1,35 @@
+<!-- Header -->
+<header class="hero-section">
+    <div>
+        <h1 class="hero-title">{{projectsPage.hero.title}}</h1>
+        <p class="hero-description">{{projectsPage.hero.description}}</p>
+    </div>
+</header>
+
+<!-- Proyectos -->
+<main class="container py-5">
+    <h2 class="text-center mb-4">{{projectsPage.main.title}}</h2>
+    <p class="text-center mb-5">{{projectsPage.main.description}}</p>
+    <div class="row g-4">
+        {{#if projectsPage.projects.length}}
+            {{#each projectsPage.projects}}
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <img src={{this.image.src}} alt={{this.image.alt}} class="img-fluid mb-3">
+                        <h5 class="font-weight-bold">{{this.name}}</h5>
+                        <p class="mb-2">{{this.summary}}</p>
+                        {{#if this.language}}
+                            <p class="mb-2"><strong>Tecnologías:</strong>
+                                {{this.language}}
+                            </p>
+                        {{/if}}
+                        <a href="{{this.url}}" target="_blank" class="btn btn-primary">Ver Proyecto</a>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <p class="text-center">No se encontraron proyectos para mostrar.</p>
+        {{/if}}
+    </div>
+</main>
+{{> contactSection}}

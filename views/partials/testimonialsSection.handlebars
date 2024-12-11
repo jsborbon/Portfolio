@@ -1,0 +1,13 @@
+
+<!-- Testimonios -->
+<section class="container py-5 section-content">
+    <h2 class="text-center mb-4">{{testimonials.title}}</h2>
+    <div class="testimonial-container">
+        {{#each testimonials.list}}
+            <div class="testimonial">
+                <p>"{{quote}}"</p>
+                <p class="client-name"><strong>- {{client}}</strong></p>
+            </div>
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,24 @@
+
+<!-- Equipo -->
+<section class="container py-5 section-content">
+    <div class="text-center mb-4">
+        <h2 class="font-weight-bold">{{team.title}}</h2>
+        <p>{{team.subtitle}}</p>
+    </div>
+    <div class="row justify-content-center g-4">
+        {{#each team.members}}
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <img src={{this.image.src}} alt={{this.image.alt}} class="img-fluid mb-3 rounded-circle">
+                    <h5 class="font-weight-bold mb-2">{{this.name}}</h5>
+                    <p class="mb-2">{{this.role}}</p>
+                    <p class="mb-2">Tecnologías:{{this.technologies}}</p>
+                    <p class="mb-2">Idiomas:{{this.languages}}</p>
+                    <a href={{this.linkedin}} class="btn btn-secondary"><i class="bi bi-linkedin"></i></a>
+                    <a href={{this.url}} class="btn btn-secondary">Ver CV</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+

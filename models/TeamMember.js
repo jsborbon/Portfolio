@@ -19,7 +19,7 @@ const TeamMember = sequelize.define('TeamMember', {
         allowNull: false,
     },
     languages: {
-        type: DataTypes.JSON, // Array de idiomas
+        type: DataTypes.JSON,
         allowNull: false,
     },
     linkedin: {
@@ -30,6 +30,10 @@ const TeamMember = sequelize.define('TeamMember', {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    github: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
 });
 
 module.exports = TeamMember;
